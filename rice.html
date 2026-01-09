@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4つのこだわり | 株式会社山宗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- 既存のCSSデザインを反映 -->
+<style>
+/* index_style.cssの内容をベースに調整 */
+body {
+    font-family: "Yu Mincho", "遊明朝", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "MS PMincho", "MS P明朝", serif;
+    color: #333;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    background-image: url("images/5.png"); /* 和風背景画像 */
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 5px;
+  color: #333;
+}
+.w3-content {
+    background-color: rgba(255, 255, 255, 0.9); /* 読みやすさのため背景を少し白く */
+    padding: 20px;
+    max-width: 1100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.custom-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+/* ナビゲーション周り */
+.w3-bar .w3-button {
+    padding: 16px;
+}
+/* こだわりセクションのスタイル */
+.commitment-section {
+    padding: 32px 0;
+    border-bottom: 1px solid #ddd;
+}
+.commitment-section:last-child {
+    border-bottom: none;
+}
+.commitment-number {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
+
+    <!-- Drop down menu when it is small --> 
+    <div class="w3-dropdown-click w3-right w3-hide-large w3-hide-medium">
+      <button class="w3-button" onclick="toggleMenu()">☰</button>
+      <div id="navMenu" class="w3-dropdown-content w3-bar-block w3-card">
+        <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+        <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
+        <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
+        <a href="commitment.html" class="w3-bar-item w3-button">こだわり</a>
+        <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+        <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+      </div>
+    </div>
+
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+        <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+        <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
+        <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
+        <a href="commitment.html" class="w3-bar-item w3-button">こだわり</a>
+        <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+        <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px; padding:0; background:none;" id="home">
+  <!-- お米の画像(2.JPG)を使用 -->
+  <img class="w3-image" src="images/2.JPG" alt="Rice Field" width="1600" height="800" style="width:100%; max-height: 500px; object-fit: cover;">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white" style="text-shadow: 2px 2px 4px #000;"><b>4つのこだわり</b></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content">
+
+  <!-- Intro -->
+  <div class="w3-center w3-padding-64">
+    <p class="w3-large">私たちは四つのこだわりにより<br>高品質なこだわり米の生産をしております。</p>
+  </div>
+
+  <!-- Summary Grid (4つのこだわりを一覧表示) -->
+  <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-container w3-white w3-center w3-padding-16 w3-card">
+        <h3>01</h3>
+        <h4>自家製堆肥</h4>
+        <p class="w3-text-grey w3-small">飛騨牛の牛糞を熟成させた極上の土作り</p>
+        <a href="#compost" class="w3-button w3-light-grey w3-block">詳細へ</a>
+      </div>
+    </div>
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-container w3-white w3-center w3-padding-16 w3-card">
+        <h3>02</h3>
+        <h4>息吹農法</h4>
+        <p class="w3-text-grey w3-small">水を改善し、活力ある稲を育てる</p>
+        <a href="#ibuki" class="w3-button w3-light-grey w3-block">詳細へ</a>
+      </div>
+    </div>
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-container w3-white w3-center w3-padding-16 w3-card">
+        <h3>03</h3>
+        <h4>疎植</h4>
+        <p class="w3-text-grey w3-small">株間を広く取り、風通しと日当たりを確保</p>
+        <a href="#planting" class="w3-button w3-light-grey w3-block">詳細へ</a>
+      </div>
+    </div>
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-container w3-white w3-center w3-padding-16 w3-card">
+        <h3>04</h3>
+        <h4>肥料</h4>
+        <p class="w3-text-grey w3-small">ミネラルと有機肥料による栄養価の追求</p>
+        <a href="#fertilizer" class="w3-button w3-light-grey w3-block">詳細へ</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Detailed Sections -->
+  
+  <!-- 1. 自家製堆肥 -->
+  <div id="compost" class="w3-row commitment-section w3-padding-64">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <!-- イメージとしてトマトや畑の画像を使用(1.JPG) -->
+     <img src="images/1.JPG" class="w3-round w3-image w3-opacity-min" alt="Soil and Produce" width="600" height="400">
+    </div>
+    <div class="w3-col m6 w3-padding-large">
+      <h2 class="w3-center"><span class="commitment-number">1</span>自家製堆肥</h2>
+      <h5 class="w3-center w3-text-grey">Soil Creation</h5>
+      <p class="w3-large">第一のこだわりは自家製堆肥です。</p>
+      <p>私たちは、堆肥を飛騨牛の牛糞を1年間熟成させて利用しております。時間をかけてじっくりと完熟させることで、臭みがなく栄養豊富な堆肥へと生まれ変わります。</p>
+      <p>その自家製堆肥をたっぷりと田んぼに散布することで、微生物が豊富な、稲にとって最高の上質な土を作り上げました。</p>
+    </div>
+  </div>
+
+  <!-- 2. 息吹農法 -->
+  <div id="ibuki" class="w3-row commitment-section w3-padding-64">
+    <div class="w3-col m6 w3-padding-large">
+      <h2 class="w3-center"><span class="commitment-number">2</span>息吹農法</h2>
+      <h5 class="w3-center w3-text-grey">Ibuki Farming Method</h5>
+      <p class="w3-large">第二のこだわりは息吹農法です。</p>
+      <p>この農法は水を改善し、活力のある稲を育てることに大きく貢献しました。専用の活性化技術を用いることで、水と土壌の環境を整え、植物本来の生命力を引き出します。</p>
+      <p>根からの養分吸収がスムーズになることで、病気に強く、食味の良い、エネルギーに満ちたお米が育ちます。</p>
+    </div>
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <!-- お米の画像(2.JPG) -->
+     <img src="images/2.JPG" class="w3-round w3-image w3-opacity-min" alt="Rice Farming" width="600" height="400">
+    </div>
+  </div>
+
+  <!-- 3. 疎植 -->
+  <div id="planting" class="w3-row commitment-section w3-padding-64">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <!-- 風景画像(4.JPG)などを使用 -->
+     <img src="images/4.JPG" class="w3-round w3-image w3-opacity-min" alt="Sparse Planting" width="600" height="400">
+    </div>
+    <div class="w3-col m6 w3-padding-large">
+      <h2 class="w3-center"><span class="commitment-number">3</span>疎植（そしょく）</h2>
+      <h5 class="w3-center w3-text-grey">Sparse Planting</h5>
+      <p class="w3-large">第三のこだわりは疎植です。</p>
+      <p>疎植とは、従来の植え方よりも株の間を広く取り、苗を田んぼに植えることです。</p>
+      <p>一見すると隙間が多く見えますが、そうすることで日当たりと風通しが格段に良くなり、湿気がこもらず病気を防ぐことができます。一株一株がのびのびと根を張り、太陽の光を浴びて元気な稲が育ちます。</p>
+    </div>
+  </div>
+
+  <!-- 4. 肥料 -->
+  <div id="fertilizer" class="w3-row commitment-section w3-padding-64">
+    <div class="w3-col m6 w3-padding-large">
+      <h2 class="w3-center"><span class="commitment-number">4</span>肥料</h2>
+      <h5 class="w3-center w3-text-grey">Fertilizer</h5>
+      <p class="w3-large">第四のこだわりは肥料です。</p>
+      <p>肥料は主に、ミネラル肥料と有機肥料の二つを利用しました。</p>
+      <p><b>ミネラル肥料：</b> 日本人に不足しがちな亜鉛やマグネシウムを多く含んだものになります。また、米粒が生育するタイミングでミネラル肥料を入れて、米粒に多くの栄養が行き渡るように調整しております。</p>
+      <p><b>有機肥料：</b> 上質なアミノ酸を含有したものを利用し、旨味と栄養価の高いお米を目指しました。</p>
+    </div>
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <!-- 大豆等の画像(3.JPG)を使用 -->
+     <img src="images/3.JPG" class="w3-round w3-image w3-opacity-min" alt="Fertilizer and Beans" width="600" height="400">
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("navMenu");
+    if (menu.className.indexOf("w3-show") == -1) {
+        menu.className += " w3-show";
+    } else { 
+        menu.className = menu.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
