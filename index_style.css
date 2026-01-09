@@ -354,3 +354,18 @@ body, h1, h2, h3, h4, h5, h6, p, a {
 .w3-display-container .w3-black {
     color: #ffffff !important; /* ここで白を強制します */
 }
+/* こだわりボックスの高さを統一する設定 */
+/* rice.html の style タグ内に追加 */
+.commitment-card {
+    min-height: 250px;      /* ボックスの最小の高さを指定（中身に合わせて調整してください） */
+    display: flex;          /* 中身を整列させるための設定 */
+    flex-direction: column; /* 上から下へ配置 */
+    justify-content: center; /* 垂直方向の真ん中に寄せる */
+    height: 100%;           /* 親の高さに合わせる */
+}
+
+/* 親の要素（w3-quarter）も高さを揃える準備 */
+.w3-row-padding {
+    display: flex;
+    flex-wrap: wrap;
+}
