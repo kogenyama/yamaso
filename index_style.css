@@ -320,6 +320,9 @@ body {
     background-attachment: fixed;              /* スクロールしても背景は動かさない */
     background-size: cover;                    /* 画面全体を覆う（質感を重視するなら消してもOK） */
     color: #333;                               /* 文字色を少し濃い灰色にすると和風に合います */
+    font-family: "Yu Mincho", "遊明朝", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "MS PMincho", "MS P明朝", serif;
+    line-height: 1.8;      /* 行間を少し広めに（スタイリッシュに見えるコツ） */
+    letter-spacing: 0.05em;
 }
 
 /* 文字を読みやすくするために、コンテンツ部分に白い背景を薄く敷く */
@@ -342,7 +345,7 @@ body {
 
 /* 1. サイト全体の文字を濃い焦茶にする */
 body, h1, h2, h3, h4, h5, h6, p, a {
-    color: #352b24 !important;
+    color: #333 !important;
 }
 
 /* 2. 画像の上の文字（ラベル）だけは白を維持する */
