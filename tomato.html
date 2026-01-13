@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>山宗のトマト | 株式会社山宗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index_style.css">
+<style>
+/* ベーススタイル */
+body {
+    font-family: "Yu Mincho", "遊明朝", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "MS PMincho", "MS P明朝", serif;
+    color: #333;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    background-image: url("images/5.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+}
+.w3-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    max-width: 1000px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* PDF再現用のレイアウトスタイル */
+.pdf-section-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+}
+.title-hida { border-color: #d32f2f; color: #d32f2f; }
+.title-healthy { border-color: #2E7D32; color: #2E7D32; }
+
+/* イントロダクション */
+.intro-box {
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* テキストを中央揃え */
+.intro-text {
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 飛騨トマト（フロー図） */
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.flow-box {
+    border: 2px solid #555;
+    background-color: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 4px;
+}
+.flow-arrow {
+    font-size: 24px;
+    color: #d32f2f;
+    font-weight: bold;
+}
+.flow-highlight {
+    background-color: #ffebee;
+    border-color: #d32f2f;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+/* ヘルシートマト（レイアウト調整） */
+.healthy-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+/* 共通のボックススタイル */
+.healthy-box {
+    border: 1px solid #999;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 左カラム（マルハナバチ） */
+.healthy-left-col {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* 右カラムラッパー（オーグリーン＋特別栽培） */
+.healthy-right-col-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 上下の間隔 */
+}
+
+.col-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #2E7D32;
+}
+
+/* グラフ・比較部分 */
+.comparison-box {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: auto; 
+    border: 1px solid #eee;
+}
+.graph-row {
+    margin-bottom: 10px;
+}
+.graph-bar-wrapper {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+    position: relative;
+}
+.graph-bar {
+    width: 50%;
+    height: 100%;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+    font-weight: bold;
+}
+.graph-label-full {
+    position: absolute;
+    right: 5px;
+    font-size: 0.7em;
+    color: #666;
+}
+.result-box-green {
+    background-color: #e8f5e9;
+    color: #2E7D32;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #c8e6c9;
+}
+
+/* 画像プレースホルダー */
+.img-placeholder {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: #eee;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
+    <div class="w3-right w3-hide-small">
+      <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+      <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
+      <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
+      <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+      <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
+      <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header (画像のみ) -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px; padding:0; background:none; margin-top:50px;" id="home">
+  <img class="w3-image" src="images/1.JPG" alt="Tomato" width="1600" height="600" style="width:100%; max-height: 400px; object-fit: cover;">
+</header>
+
+<!-- Main Content -->
+<div class="w3-content">
+
+    <!-- 1. イントロダクション -->
+    <div class="intro-box">
+        <h1 style="margin-bottom:20px; font-weight:bold; border:none;">山宗のトマト</h1>
+        <div class="intro-text">
+            <p>
+                山宗では、<b>飛騨トマト</b>と<b>ヘルシートマト</b>を生産しています。<br>
+                また、それぞれのトマトをより美味しくする工夫を施しております。<br>
+                また、山宗として求められるレベル以上の品質のトマトを生産しております。
+            </p>
+        </div>
+        <div class="w3-center w3-margin-top">
+            <img src="images/1.JPG" style="width:150px; height:100px; object-fit:cover; border:1px solid #ccc; margin:5px;">
+            <img src="images/4.JPG" style="width:150px; height:100px; object-fit:cover; border:1px solid #ccc; margin:5px;">
+        </div>
+    </div>
+
+    <hr style="border-top: 1px dashed #ccc;">
+
+    <!-- 2. 飛騨トマト -->
+    <div class="w3-padding-32">
+        <div class="w3-row">
+            <div class="w3-col m5">
+                <h2 class="pdf-section-title title-hida">飛騨トマト</h2>
+                <div class="w3-padding">
+                    <p><b>品種：</b> 麗月（れいげつ）</p>
+                    <p><b>品種特性：</b><br>
+                    肉質よく、コクがあり食味は極めてよい。<br>
+                    よく日持ちする。</p>
+                    <img src="images/1.JPG" class="img-placeholder" alt="飛騨トマト写真">
+                </div>
+            </div>
+            
+            <div class="w3-col m7">
+                <div class="flow-container">
+                    <div class="flow-box" style="background-color:#e8eaf6;">
+                        <h4 style="margin:0; color:#3f51b5;">栽培環境</h4>
+                        <p class="w3-small">3,000メートル級の山々に囲まれる高冷地にあり、<br><b>寒暖差の激しい地域。</b></p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-box" style="background-color:#fff3e0;">
+                        <p class="w3-small" style="text-align:left;">
+                        昼に光合成した糖が夜の涼しさにより、果実に補給される。<br>
+                        また、有機酸も夜の涼しさで植物内に保持される。</p>
+                        <p class="w3-tiny w3-text-grey">(夜暑い場合、糖と有機酸は呼吸により消耗)</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-box flow-highlight">
+                        「食味」、「品質」の高いトマト
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border-top: 1px dashed #ccc;">
+
+    <!-- 3. ヘルシートマト (3つのこだわり構成) -->
+    <div class="w3-padding-32">
+        <h2 class="pdf-section-title title-healthy">ヘルシートマト</h2>
+        <div class="w3-margin-bottom">
+            <p><b>品種：</b> 桃太郎みなみ</p>
+            <p><b>品種特性：</b> 甘みと酸味のバランスが良く、全体的に<b>「まろやかでコクがある」</b></p>
+        </div>
+
+        <div class="healthy-container">
+            
+            <!-- 左カラム：こだわり1【マルハナバチ】 -->
+            <div class="healthy-box healthy-left-col">
+                <div class="col-header">マルハナバチ</div>
+                <img src="images/2.JPG" class="img-placeholder" alt="マルハナバチ写真">
+                
+                <h4 class="w3-center">蜂による受粉</h4>
+                
+                <div class="comparison-box">
+                    <p class="w3-small">
+                        実をつけるために「蜂による受粉」と、「ホルモン散布による受精」があるが、<br>
+                        <b>蜂を利用</b>しています。
+                    </p>
+                </div>
+                
+                <div class="result-box-green" style="margin-top:auto;">
+                    より大きく、<br>実詰まりの良いトマト
+                </div>
+            </div>
+
+            <!-- 右カラム：こだわり2【オーグリーン】 & こだわり3【特別栽培】 -->
+            <div class="healthy-right-col-wrapper">
+                
+                <!-- こだわり2：オーグリーン (特別栽培とは別枠) -->
+                <div class="healthy-box">
+                    <div class="col-header">オーグリーン</div>
+                    <div class="w3-row">
+                        <div class="w3-col s4">
+                            <img src="images/3.JPG" style="width:100%; height:80px; object-fit:cover; border:1px solid #ccc;">
+                        </div>
+                        <div class="w3-col s8 w3-padding-small">
+                            <b>元肥に使用</b>
+                            <p class="w3-small">土壌微生物を増やし食味の向上が期待できます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- こだわり3：特別栽培農産物 -->
+                <div class="healthy-box" style="flex:1;">
+                    <div class="col-header">特別栽培農産物</div>
+                    
+                    <div class="comparison-box">
+                        <p class="w3-small"><b>● 慣行栽培との比較</b></p>
+                        
+                        <!-- グラフ1 -->
+                        <div class="graph-row">
+                            <div class="w3-tiny">化学肥料の窒素成分</div>
+                            <div class="graph-bar-wrapper">
+                                <div class="graph-bar">50%</div>
+                                <span class="graph-label-full">慣行(100%)</span>
+                            </div>
+                        </div>
+
+                        <!-- グラフ2 -->
+                        <div class="graph-row">
+                            <div class="w3-tiny">化学合成農薬 使用回数</div>
+                            <div class="graph-bar-wrapper">
+                                <div class="graph-bar">50%</div>
+                                <span class="graph-label-full">慣行(100%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-box-green">
+                        美味しく、安心、安全なトマト
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script src="toggleMenu.js"></script>
+</body>
+</html>
