@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>大豆と味噌 | 株式会社山宗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index_style.css">
+<style>
+/* 共通スタイル */
+body {
+    font-family: "Yu Mincho", "遊明朝", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "MS PMincho", "MS P明朝", serif;
+    color: #333;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    background-image: url("images/5.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+}
+.w3-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    max-width: 1100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+}
+.title-soy { color: #558B2F; }
+.title-soy::after { background-color: #558B2F; }
+.title-miso { color: #795548; }
+.title-miso::after { background-color: #795548; }
+
+/* 販売ボタンエリア */
+.sales-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+.btn-buy {
+    padding: 12px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+.btn-buy-soy {
+    background-color: #558B2F;
+    color: white;
+}
+.btn-buy-soy:hover {
+    background-color: #33691E;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.btn-buy-miso {
+    background-color: #795548;
+    color: white;
+}
+.btn-buy-miso:hover {
+    background-color: #4E342E;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 画像スタイル */
+.img-main {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.img-gallery {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+.img-gallery:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
+    <div class="w3-right w3-hide-small">
+      <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+      <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
+      <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
+      <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+      <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
+      <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px; padding:0; background:none; margin-top:50px;" id="home">
+  <!-- 大豆などの集合写真を使用することを想定 -->
+  <img class="w3-image" src="images/3.JPG" alt="Soybeans and Miso" width="1600" height="600" style="width:100%; max-height: 500px; object-fit: cover;">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white" style="text-shadow: 2px 2px 4px #000;"><b>山宗の大豆と味噌</b></h1>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="w3-content">
+
+    <div class="w3-center w3-padding-32">
+        <p class="w3-large">
+            飛騨の自然が育んだ、こだわりの大豆と<br>
+            それを使用した特製の味噌をご紹介します。
+        </p>
+    </div>
+
+    <hr>
+
+    <!-- =============================================
+         大豆セクション
+         ============================================= -->
+    <div id="soybean" class="w3-padding-32">
+        <h2 class="section-title title-soy">こだわりの大豆</h2>
+        
+        <div class="w3-row-padding">
+            <!-- 左：説明 -->
+            <div class="w3-col m6">
+                <h3 class="w3-text-green" style="font-weight:bold;">里のほほえみ</h3>
+                <p>
+                    私たちが育てている大豆は、「里のほほえみ」という品種です。<br>
+                    この品種は、粒が大きく、タンパク質の含有量が高いため、煮豆や豆腐、味噌加工に適しており、何より味の評判が非常に良いのが特徴です。
+                </p>
+                <div class="w3-panel w3-leftbar w3-border-green w3-light-grey">
+                    <p><b>【栽培のこだわり】</b><br>
+                    大きく味の良い大豆を育てるために、<b>有機肥料</b>や<b>ミネラル肥料</b>の散布を積極的に行っています。<br>
+                    また、皆様に安心して食べていただけるよう、農薬を極力抑えた<b>「減農薬」</b>を掲げ、安心安全な大豆栽培に取り組んでいます。</p>
+                </div>
+            </div>
+            <!-- 右：メイン写真 -->
+            <div class="w3-col m6">
+                <img src="images/3.JPG" class="img-main" alt="里のほほえみ">
+            </div>
+        </div>
+
+        <!-- 写真ギャラリー（大豆） -->
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col m4">
+                <img src="images/3.JPG" class="img-gallery" alt="大豆の栽培風景">
+                <p class="w3-small w3-center w3-text-grey">栽培風景</p>
+            </div>
+            <div class="w3-col m4">
+                <img src="images/3.JPG" class="img-gallery" alt="収穫された大豆">
+                <p class="w3-small w3-center w3-text-grey">収穫された大豆</p>
+            </div>
+            <div class="w3-col m4">
+                <img src="images/3.JPG" class="img-gallery" alt="選別作業">
+                <p class="w3-small w3-center w3-text-grey">丁寧な選別</p>
+            </div>
+        </div>
+
+        <!-- 販売情報 -->
+        <div class="sales-box">
+            <h3 class="w3-text-green">大豆の販売について</h3>
+            <p>こだわりの「里のほほえみ」を販売しております。<br>ご家庭での煮豆や、手作り味噌の材料としても最適です。</p>
+            <a href="shop.html" class="btn-buy btn-buy-soy">大豆を購入する</a>
+        </div>
+    </div>
+
+    <hr style="margin: 60px 0; border-top: 1px dashed #ccc;">
+
+    <!-- =============================================
+         味噌セクション
+         ============================================= -->
+    <div id="miso" class="w3-padding-32">
+        <h2 class="section-title title-miso">特製 米みそ『龍のかがやき』</h2>
+
+        <div class="w3-row-padding">
+            <!-- 上段：メイン説明と写真 -->
+            <div class="w3-col m12">
+                <div style="display:flex; flex-wrap:wrap; align-items:center; gap:30px;">
+                    <div style="flex:1; min-width:300px;">
+                        <img src="images/4.JPG" class="img-main" alt="龍のかがやき 味噌">
+                    </div>
+                    <div style="flex:1; min-width:300px;">
+                        <p class="w3-large">
+                            <b>『龍のかがやき』</b>は、大粒で味の評判も大変高いお米<b>「龍の瞳」</b>由来の米みそです。
+                        </p>
+                        <p>
+                            私たちは飛騨地方で「龍の瞳」を生産しております。龍の瞳として販売するには「通常のお米の1.2倍以上の大きさ」という大変厳しい基準があります。<br>
+                            その基準に惜しくも達せず、龍の瞳として販売されないお米が非常にもったいないと感じ、それらをふんだんに使用した味噌を開発しました。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下段：こだわりポイント -->
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col m6">
+                <div class="w3-card w3-padding" style="height:100%; border-top: 4px solid #795548;">
+                    <h4 class="w3-text-brown w3-center">素材と製法のこだわり</h4>
+                    <ul class="w3-ul">
+                        <li><b>お米：</b> 希少な「龍の瞳」の規格外米を贅沢に使用。</li>
+                        <li><b>大豆：</b> 味の評判が高い自社生産の「里のほほえみ」を使用。</li>
+                        <li><b>加工：</b> 飛騨高山の老舗「有限会社 麹屋 柴田春次商店」に依頼。</li>
+                    </ul>
+                    <p class="w3-small w3-margin-top">
+                        老舗の技術で加工することで、<b>コクと奥行きのある味噌</b>の製造に成功いたしました。
+                    </p>
+                </div>
+            </div>
+            <div class="w3-col m6">
+                <div class="w3-card w3-padding" style="height:100%; border-top: 4px solid #795548;">
+                    <h4 class="w3-text-brown w3-center">おすすめの食べ方</h4>
+                    <div class="w3-row">
+                        <div class="w3-col s4 w3-center">
+                            <span style="font-size:30px;">🍲</span><br><b>味噌汁</b><br><span class="w3-tiny">コクと奥行きを<br>感じられます</span>
+                        </div>
+                        <div class="w3-col s4 w3-center">
+                            <span style="font-size:30px;">🍢</span><br><b>味噌ダレ</b><br><span class="w3-tiny">豆腐や<br>こんにゃくに</span>
+                        </div>
+                        <div class="w3-col s4 w3-center">
+                            <span style="font-size:30px;">🍙</span><br><b>焼きおにぎり</b><br><span class="w3-tiny">塗って焼くだけで<br>絶品</span>
+                        </div>
+                    </div>
+                    <p class="w3-margin-top">
+                        飛騨高山で作られた、コクと奥行きのある味わいをぜひお楽しみください。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 写真ギャラリー（味噌） -->
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col m4">
+                <img src="images/4.JPG" class="img-gallery" alt="味噌汁">
+                <p class="w3-small w3-center w3-text-grey">香り高い味噌汁</p>
+            </div>
+            <div class="w3-col m4">
+                <img src="images/4.JPG" class="img-gallery" alt="焼きおにぎり">
+                <p class="w3-small w3-center w3-text-grey">香ばしい焼きおにぎり</p>
+            </div>
+            <div class="w3-col m4">
+                <img src="images/4.JPG" class="img-gallery" alt="パッケージ">
+                <p class="w3-small w3-center w3-text-grey">製品パッケージ</p>
+            </div>
+        </div>
+
+        <!-- 販売情報 -->
+        <div class="sales-box">
+            <h3 class="w3-text-brown">味噌の販売について</h3>
+            <p>こだわりの米みそ『龍のかがやき』を販売しております。<br>ご自宅用はもちろん、贈り物にも喜ばれています。</p>
+            <a href="shop.html" class="btn-buy btn-buy-miso">味噌を購入する</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script src="toggleMenu.js"></script>
+</body>
+</html>
