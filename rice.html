@@ -4,8 +4,7 @@
 <title>山宗のこだわり米 | 株式会社山宗</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- 既存のCSSデザインを反映 -->
+<link rel="stylesheet" href="index_style.css">
 <style>
 /* index_style.cssの内容をベースに調整 */
 body {
@@ -24,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #333;
 }
 .w3-content {
-    background-color: rgba(255, 255, 255, 0.9); /* 読みやすさのため背景を少し白く */
+    background-color: rgba(255, 255, 255, 0.95); /* 読みやすさのため背景を少し白く */
     padding: 20px;
     max-width: 1100px;
     margin-top: 20px;
@@ -58,6 +57,61 @@ h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
     font-size: 0.8em;
     vertical-align: middle;
+}
+/* こだわりカード (Summary Grid用) */
+.commitment-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* お米のような楕円形 */
+    border-radius: 50%;
+    aspect-ratio: 1 / 1.35; /* 縦長のお米比率 */
+    max-width: 220px; /* 大きくなりすぎないように制限 */
+    margin: 0 auto; /* 中央配置 */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 影で立体感を出す */
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+/* 図解用のスタイル */
+.diagram-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+svg text {
+    font-family: "Yu Mincho", "遊明朝", serif;
+}
+/* 購入ボタンエリア */
+.purchase-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #333;
+    margin-top: 40px;
+}
+.btn-buy {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px;
+    transition: background-color 0.3s;
+    min-width: 200px;
+}
+.btn-buy:hover {
+    background-color: #555;
+}
+.product-card {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    height: 100%;
 }
 </style>
 </head>
@@ -106,14 +160,6 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Page content -->
 <div class="w3-content">
-
-    <div class="w3-center w3-padding-32">
-        <p class="w3-large">
-            山宗では、高山もちと、こだわり米、龍の瞳の3種類のお米を育てております。<br>
-        </p>
-    </div>
-
-    <hr>
 
   <!-- Intro -->
   <div class="w3-center w3-padding-64">
@@ -165,11 +211,10 @@ h1, h2, h3, h4, h5, h6 {
   <div id="compost" class="w3-row commitment-section w3-padding-64">
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <!-- イメージとしてトマトや畑の画像を使用(1.JPG) -->
-     <img src="images/1.JPG" class="w3-round w3-image w3-opacity-min" alt="Soil and Produce" width="600" height="400">
+     <img src="images/堆肥.png" class="w3-round w3-image w3-opacity-min" alt="Soil and Produce" width="600" height="400">
     </div>
     <div class="w3-col m6 w3-padding-large">
       <h2 class="w3-center"><span class="commitment-number">1</span>自家製堆肥</h2>
-      <h5 class="w3-center w3-text-grey">Soil Creation</h5>
       <p class="w3-large">第一のこだわりは自家製堆肥です。</p>
       <p>私たちは、飛騨牛の牛糞をはじめとする様々な有機物を、1年間熟成させて利用しております。</p>
       <p>その自家製堆肥を田んぼに散布することで、土そのものの地力を高め、稲にとって最高の土壌を作り上げます。</p>
@@ -188,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
     </div>
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <!-- お米の画像(2.JPG) -->
-     <img src="images/2.JPG" class="w3-round w3-image w3-opacity-min" alt="Rice Farming" width="600" height="400">
+     <img src="images/ibuki.jpg" class="w3-round w3-image w3-opacity-min" alt="Rice Farming" width="600" height="400">
     </div>
   </div>
 
@@ -196,7 +241,7 @@ h1, h2, h3, h4, h5, h6 {
   <div id="planting" class="w3-row commitment-section w3-padding-64">
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <!-- 風景画像(4.JPG)などを使用 -->
-     <img src="images/4.JPG" class="w3-round w3-image w3-opacity-min" alt="Sparse Planting" width="600" height="400">
+     <img src="images/taue.png" class="w3-round w3-image w3-opacity-min" alt="Sparse Planting" width="600" height="400">
     </div>
     <div class="w3-col m6 w3-padding-large">
       <h2 class="w3-center"><span class="commitment-number">3</span>疎植（そしょく）</h2>
@@ -207,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
       <p>こうした工夫から、確かな品質のお米を生産しています。</p>
     </div>
   </div>
-
+    
   <!-- 4. 肥料 -->
   <div id="fertilizer" class="w3-row commitment-section w3-padding-64">
     <div class="w3-col m6 w3-padding-large">
@@ -220,8 +265,78 @@ h1, h2, h3, h4, h5, h6 {
     </div>
     <div class="w3-col m6 w3-padding-large w3-hide-small">
      <!-- 大豆等の画像(3.JPG)を使用 -->
-     <img src="images/3.JPG" class="w3-round w3-image w3-opacity-min" alt="Fertilizer and Beans" width="600" height="400">
+     <img src="images/肥料.jpg" class="w3-round w3-image w3-opacity-min" alt="Fertilizer and Beans" width="600" height="400">
     </div>
+  </div>
+
+
+
+  <!-- その他の品種紹介（高山もち・龍の瞳） -->
+  <div class="w3-container w3-padding-64">
+    <h2 class="w3-center w3-margin-bottom"><b>こだわりの銘柄</b></h2>
+
+    <!-- 高山もち -->
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-col m4">
+            <img src="images/2.JPG" class="w3-image w3-round" alt="高山もち" style="height:250px; width:100%; object-fit:cover;">
+        </div>
+        <div class="w3-col m8">
+            <h3 class="w3-text-grey"><b>高山もち</b></h3>
+            <p class="w3-large">
+                飛騨高山の冷涼な気候が育んだ、最高級のもち米です。<br>
+                きめ細やかで伸びが良く、コシの強さが特徴。お餅にした時の風味と甘みは格別で、地元でも長く愛され続けている逸品です。
+            </p>
+        </div>
+    </div>
+    
+    <div class="w3-padding-16"></div>
+
+    <!-- 龍の瞳 -->
+    <div class="w3-row-padding">
+        <div class="w3-col m4">
+            <img src="images/2.JPG" class="w3-image w3-round" alt="龍の瞳" style="height:250px; width:100%; object-fit:cover;">
+        </div>
+        <div class="w3-col m8">
+            <h3 class="w3-text-grey"><b>龍の瞳</b></h3>
+            <p class="w3-large">
+                驚くほど大粒で、芳醇な香りと強い甘みが特徴の奇跡のお米。<br>
+                「いのちの壱」という品種から生まれたこのお米は、炊き上がりの輝きがまるで龍の瞳のようであることから名付けられました。一度食べたら忘れられない極上の味わいです。
+            </p>
+        </div>
+    </div>
+  </div>
+
+  <!-- 購入セクション -->
+  <div class="purchase-section">
+      <h2 class="w3-text-white" style="color:#333 !important;"><b>お米のご購入はこちら</b></h2>
+      <p class="w3-text-grey">こだわりの味を、ご家庭へお届けします。</p>
+      
+      <div class="w3-row-padding w3-margin-top">
+          <!-- こだわり米 -->
+          <div class="w3-col m4">
+              <div class="product-card">
+                  <h4>こだわり米</h4>
+                  <p class="w3-small">山宗のこだわりが詰まった自慢のお米。</p>
+                  <a href="shop.html" class="btn-buy">購入ページへ</a>
+              </div>
+          </div>
+          <!-- 高山もち -->
+          <div class="w3-col m4">
+              <div class="product-card">
+                  <h4>高山もち</h4>
+                  <p class="w3-small">きめ細やかでコシの強いもち米。</p>
+                  <a href="shop.html" class="btn-buy">購入ページへ</a>
+              </div>
+          </div>
+          <!-- 龍の瞳 -->
+          <div class="w3-col m4">
+              <div class="product-card">
+                  <h4>龍の瞳</h4>
+                  <p class="w3-small">大粒で甘い、極上のプレミアム米。</p>
+                  <a href="shop.html" class="btn-buy">購入ページへ</a>
+              </div>
+          </div>
+      </div>
   </div>
 
 </div>
