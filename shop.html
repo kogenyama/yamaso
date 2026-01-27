@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商品購入 | 株式会社山宗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index_style.css">
+<style>
+/* shop.html 専用スタイル */
+
+/* 共通設定（他のページと統一） */
+body {
+    font-family: "Yu Mincho", "遊明朝", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "MS PMincho", "MS P明朝", serif;
+    color: #333;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    background-image: url("images/5.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+}
+.w3-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    max-width: 1100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* カテゴリ見出し */
+.category-title {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* 商品カード */
+.product-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 商品画像 */
+.product-img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+}
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+/* 商品情報エリア */
+.product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+.product-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+.product-ingredients {
+    font-size: 0.85rem;
+    color: #888;
+    background-color: #f9f9f9;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #b71c1c; /* 和風な赤色 */
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+/* ボタン類 */
+.btn-detail {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #795548; /* 和風な茶色 */
+    text-decoration: underline;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.btn-detail:hover {
+    color: #5d4037;
+}
+
+.btn-buy {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #333; /* 落ち着いた黒/濃いグレー */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-buy:hover {
+    background-color: #555;
+    color: #fff;
+}
+.btn-buy i {
+    margin-right: 5px;
+}
+
+/* バリエーション選択（kg数など） */
+.variation-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 600px) {
+    .w3-content {
+        padding: 20px;
+    }
+    .product-img-container {
+        height: 200px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px; overflow:visible;">
+      <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
+  
+      <!-- Drop down menu when it is small(so hiding them)--> 
+      <div class="w3-dropdown-click w3-right w3-hide-large w3-hide-medium">
+        <button class="w3-button" onclick="toggleMenu()">☰</button>
+        <div id="navMenu" class="w3-dropdown-content w3-bar-block w3-card">
+          <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">生産品とこだわり ▾</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 10;">
+              <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+              <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+              <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+              <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+            </div>
+          </div>
+          <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+          <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
+          <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+        </div>
+      </div>
+  
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+        <div class="w3-dropdown-hover" style="background:none;">
+          <button class="w3-bar-item w3-button">生産品とこだわり ▾</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4 custom-dropdown">
+            <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+            <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+            <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+            <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+          </div>
+        </div>
+        <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+        <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+
+<!-- Main Content -->
+<div class="w3-content">
+
+    <div class="w3-center w3-padding-32">
+        <p class="w3-large">
+            山宗自慢のこだわり農産物と加工品をお届けします。<br>
+            ご自宅用はもちろん、贈り物にもぜひご利用ください。
+        </p>
+    </div>
+
+    <!-- お米・もち Section -->
+    <h2 class="category-title">お米・もち</h2>
+    <div class="w3-row-padding">
+        
+        <!-- 商品1: 白米こだわり米 -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/2.JPG" alt="白米こだわり米" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">白米 こだわり米</div>
+                    <p class="product-desc">飛騨の自然とこだわりの農法で育った、甘みのある美味しい白米です。</p>
+                    <div class="product-ingredients">原材料：単一原料米（岐阜県高山産）</div>
+                    
+                    <a href="rice.html" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+                    
+                    <select class="variation-select">
+                        <option>10kg</option>
+                        <option>30kg</option>
+                        <option>60kg</option>
+                    </select>
+                    <div class="product-price">¥100 (税込)</div>
+                    <!-- STORESの商品ページURLが決まったら href="#" を書き換えてください -->
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品2: 玄米こだわり米 -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/稲刈り.jpg" alt="玄米こだわり米" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">玄米 こだわり米</div>
+                    <p class="product-desc">栄養価が高く、噛むほどに味わい深い玄米です。健康志向の方におすすめ。</p>
+                    <div class="product-ingredients">原材料：単一原料米（岐阜県高山産）</div>
+                    
+                    <a href="rice.html" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+
+                    <select class="variation-select">
+                        <option>10kg</option>
+                        <option>30kg</option>
+                        <option>60kg</option>
+                    </select>
+                    <div class="product-price">¥100 (税込)</div>
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品3: 高山もち -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/高山もち.png" alt="高山もち" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">高山もち</div>
+                    <p class="product-desc">きめ細やかでコシが強く、風味豊かな最高級のもち米です。</p>
+                    <div class="product-ingredients">原材料：もち米（高山もち）</div>
+                    
+                    <a href="rice.html" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+
+                    <div class="product-price" style="margin-top:auto;">¥100 (税込)</div>
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 大豆・味噌 Section -->
+    <h2 class="category-title">大豆・味噌</h2>
+    <div class="w3-row-padding">
+
+        <!-- 商品4: 大豆 -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/daizu.png" alt="大豆" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">大豆（里のほほえみ）</div>
+                    <p class="product-desc">大粒でタンパク質が豊富な品種。煮豆や自家製味噌作りに最適です。</p>
+                    <div class="product-ingredients">原材料：大豆（岐阜県高山産 里のほほえみ）</div>
+                    
+                    <a href="miso.html#soybean" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+
+                    <div class="product-price" style="margin-top:auto;">¥100 (税込)</div>
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品5: 龍のかがやき（味噌） -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/味噌販売.png" alt="龍のかがやき" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">米みそ 龍のかがやき</div>
+                    <p class="product-desc">希少米「龍の瞳」と自社大豆を使用した、コクと奥行きのある特製味噌。</p>
+                    <div class="product-ingredients">原材料：米（龍の瞳）、大豆、食塩</div>
+                    
+                    <a href="miso.html#miso" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+
+                    <div class="product-price" style="margin-top:auto;">¥100 (税込)</div>
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- トマト加工品 Section -->
+    <h2 class="category-title">トマト加工品</h2>
+    <div class="w3-row-padding">
+
+        <!-- 商品6: トマトジュース -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/tomatojuice.png" alt="トマトジュース" class="product-img" style="object-fit: contain; padding: 10px;">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">トマトジュース</div>
+                    <p class="product-desc">完熟トマトを100%使用。添加物を一切使用しない、トマト本来の甘みと酸味。</p>
+                    <div class="product-ingredients">原材料：トマト（岐阜県高山産）</div>
+                    
+                    <a href="nae.html#processed" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+
+                    <div class="product-price" style="margin-top:auto;">¥100 (税込)</div>
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商品7: トマトピューレ -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="images/ふるさと納税トマト加工.png" alt="トマトピューレ" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">トマトピューレ</div>
+                    <p class="product-desc">料理のベースや隠し味に。トマトの旨味が凝縮された濃厚なピューレです。</p>
+                    <div class="product-ingredients">原材料：トマト（岐阜県高山産）</div>
+                    
+                    <a href="nae.html#processed" class="btn-detail">こだわり等の説明を見る &raquo;</a>
+
+                    <div class="product-price" style="margin-top:auto;">¥100 (税込)</div>
+                    <a href="#" class="btn-buy" target="_blank">STORESで購入する</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+    
+    <div class="w3-container w3-padding-32 w3-center w3-light-grey w3-round">
+        <h3>決済について</h3>
+        <p>
+            当サイトでの販売は、外部決済サービス「STORES」を利用しております。<br>
+            「STORESで購入する」ボタンをクリックすると、決済サイトへ移動します。<br>
+            クレジットカード決済をはじめ、多様な決済方法をご利用いただけます。
+        </p>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script src="toggleMenu.js"></script>
+
+</body>
+</html>
