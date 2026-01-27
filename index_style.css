@@ -392,3 +392,99 @@ html, body, h1, h2, h3, h4, h5, h6, p, div, span, a {
 .text-red {
     color: #a20025 !important; /* はっきりした赤色 */
 }
+/* ドロップダウンが勝手に出るのを防ぐ強制設定 */
+.w3-dropdown-hover:not(:hover) > .w3-dropdown-content {
+    display: none !important;
+}
+
+.w3-dropdown-hover:hover > .w3-dropdown-content {
+    display: block !important;
+}
+
+/* ヘッダーのナビゲーションボタン全体の文字サイズ */
+.w3-bar-item.w3-button {
+    font-size: 17px !important; /* ここでサイズを自由に指定してください */
+    font-family: inherit;      /* 周りの文字と同じフォントを強制的に使う */
+}
+
+/* ドロップダウンメニューの中の文字サイズを調整 */
+.w3-dropdown-content a {
+    font-size: 1px !important; /* ここの数値を大きくすると文字が大きくなります */
+    padding: 12px 16px;       /* 文字を大きくした分、余白も少し広げると綺麗です */
+}
+
+/* ドロップダウンをボタンの真下に配置するための設定 */
+.w3-dropdown-hover {
+    position: relative !important; /* ボタンを基準点にする */
+    display: inline-block !important;
+    float: left; /* 他のメニューと横並びにする */
+}
+
+.custom-dropdown {
+    position: absolute !important;
+    left: 0 !important;      /* ボタンの左端に合わせる */
+    top: 100% !important;   /* ボタンのすぐ下に配置 */
+    min-width: 510px !important; /* メニューの幅 */
+    display: none;
+    z-index: 999;
+}
+
+/* マウスを乗せた時だけ表示 */
+.w3-dropdown-hover:hover .custom-dropdown {
+    display: block !important;
+}
+
+/* ボタンの文字サイズを他のリンクと統一 */
+.w3-dropdown-hover button {
+    font-size: 15px !important; /* お好みのサイズに調整してください */
+    font-family: inherit !important;
+    text-transform: none;
+}
+
+/* サイト全体の本文（説明文）の文字サイズを一括変更 */
+body {
+    font-size: 17px !important; /* 15pxから18pxに大きくする例。お好みの数値に変えてください */
+    line-height: 1.8 !important; /* 行間を少し広げると、大きな文字でも読みやすくなります */
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px !important;
+    }
+}
+
+/* 段落テキスト（pタグ）を少し大きくする */
+p {
+    font-size: 1.1rem !important; /* 標準より1.1倍大きく */
+    line-height: 1.8;             /* 行間を広げて読みやすく */
+}
+
+/* W3.CSSの「小さい文字用クラス」を底上げする */
+.w3-small {
+    font-size: 15px !important; /* 元の12pxから14px程度にアップ */
+}
+
+/* 住所や電話番号などの連絡先セクション */
+#contact p {
+    font-size: 1.1rem !important;
+}
+
+/* 画像の上のラベル文字の設定 */
+.w3-display-middle {
+    width: auto;                /* 幅を自動にして中身に合わせる */
+    white-space: nowrap;        /* 絶対に改行させない */
+    text-align: center;         /* 文字を中央揃えにする */
+    display: flex;              /* 中央寄せを確実にするための設定 */
+    justify-content: center;    /* 横方向の中央 */
+    align-items: center;        /* 縦方向の中央 */
+    min-width: 120px;           /* 必要に応じてラベルの最小幅を調整 */
+}
+
+.w3-dropdown-content .w3-bar-item {
+/* paddingの最初の数値（12px）を大きくすると箱が縦に伸び、小さくすると縮みます */
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    /* 文字の大きさを変えたい場合はここも調整してください */
+    font-size: 15px !important;
+
+}

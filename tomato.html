@@ -184,20 +184,53 @@ h1, h2, h3, h4 {
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
-    <div class="w3-right w3-hide-small">
-      <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
-      <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
-      <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
-      <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
-      <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
-      <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px; overflow:visible;">
+      <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
+  
+      <!-- Drop down menu when it is small(so hiding them)--> 
+      <div class="w3-dropdown-click w3-right w3-hide-large w3-hide-medium">
+        <button class="w3-button" onclick="toggleMenu()">☰</button>
+        <div id="navMenu" class="w3-dropdown-content w3-bar-block w3-card">
+          <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">生産品とこだわり ▾</button>
+            
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 10;">
+              <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+              <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+              <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+              <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+            </div>
+          </div>
+          <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+          <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
+          <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+        </div>
+      </div>
+  
+  
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+      
+        <div class="w3-dropdown-hover" style="background:none;">
+          <button class="w3-bar-item w3-button">生産品とこだわり ▾</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4 custom-dropdown">
+            <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+            <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+            <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+            <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+          </div>
+        </div>
+      
+        <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+        <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+      </div>
     </div>
   </div>
-</div>
 
 <!-- Header (画像のみ) -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px; padding:0; background:none; margin-top:50px;" id="home">

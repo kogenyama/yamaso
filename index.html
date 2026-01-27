@@ -13,7 +13,7 @@
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px; overflow:visible;">
     <a href="#home" class="w3-bar-item w3-button">株式会社山宗</a>
 
     <!-- Drop down menu when it is small(so hiding them)--> 
@@ -21,7 +21,16 @@
       <button class="w3-button" onclick="toggleMenu()">☰</button>
       <div id="navMenu" class="w3-dropdown-content w3-bar-block w3-card">
         <a href="#about" class="w3-bar-item w3-button">企業情報</a>
-        <a href="#info" class="w3-bar-item w3-button">生産品とこだわり</a>
+        <div class="w3-dropdown-hover">
+          <button class="w3-button">生産品とこだわり ▾</button>
+          
+          <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 10;">
+            <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+            <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+            <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+            <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+          </div>
+        </div>
         <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
         <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
         <a href="#contact" class="w3-bar-item w3-button">お問い合わせ</a>
@@ -32,7 +41,17 @@
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">企業情報</a>
-      <a href="#info" class="w3-bar-item w3-button">生産品とこだわり</a>
+    
+      <div class="w3-dropdown-hover" style="background:none;">
+        <button class="w3-bar-item w3-button">生産品とこだわり ▾</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4 custom-dropdown">
+          <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+          <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+          <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+          <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+        </div>
+      </div>
+    
       <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
       <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
       <a href="#contact" class="w3-bar-item w3-button">お問い合わせ</a>
@@ -103,7 +122,7 @@
         <div class="w3-display-container">
           <a href="nae.html">
             <img src="images/tomatojuice.png" class="custom-img w3-hover-opacity" alt="加工品">
-            <div class="w3-display-middle w3-black w3-padding w3-opacity w3-round">苗<br>トマト加工品</div>
+            <div class="w3-display-middle w3-black w3-padding w3-opacity w3-round" style="white-space: nowrap;">苗・トマト加工品</div>
           </a>
         </div>
       </div>

@@ -119,35 +119,51 @@ svg text {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
-
-    <!-- Drop down menu when it is small --> 
-    <div class="w3-dropdown-click w3-right w3-hide-large w3-hide-medium">
-      <button class="w3-button" onclick="toggleMenu()">☰</button>
-      <div id="navMenu" class="w3-dropdown-content w3-bar-block w3-card">
+    <div class="w3-bar w3-white w3-card" id="myNavbar" style="letter-spacing:4px; overflow:visible;">
+      <a href="index.html#home" class="w3-bar-item w3-button">株式会社山宗</a>
+  
+      <!-- Drop down menu when it is small(so hiding them)--> 
+      <div class="w3-dropdown-click w3-right w3-hide-large w3-hide-medium">
+        <button class="w3-button" onclick="toggleMenu()">☰</button>
+        <div id="navMenu" class="w3-dropdown-content w3-bar-block w3-card">
+          <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">生産品とこだわり ▾</button>
+            
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 10;">
+              <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+              <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+              <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+              <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+            </div>
+          </div>
+          <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
+          <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
+          <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
+        </div>
+      </div>
+  
+  
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
         <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
-        <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
-        <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
-        <a href="commitment.html" class="w3-bar-item w3-button">こだわり</a>
+      
+        <div class="w3-dropdown-hover" style="background:none;">
+          <button class="w3-bar-item w3-button">生産品とこだわり ▾</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4 custom-dropdown">
+            <a href="tomato.html" class="w3-bar-item w3-button">トマト</a>
+            <a href="rice.html" class="w3-bar-item w3-button">お米</a>
+            <a href="miso.html" class="w3-bar-item w3-button">大豆・味噌</a>
+            <a href="nae.html" class="w3-bar-item w3-button">苗・トマト加工品</a>
+          </div>
+        </div>
+      
         <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
-        <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
+        <a href="/recruit.html" class="w3-bar-item w3-button">採用情報</a>
         <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
       </div>
     </div>
-
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-        <a href="index.html#about" class="w3-bar-item w3-button">企業情報</a>
-        <a href="product.html" class="w3-bar-item w3-button">商品情報</a>
-        <a href="index.html#info" class="w3-bar-item w3-button">事業内容</a>
-        <a href="commitment.html" class="w3-bar-item w3-button">こだわり</a>
-        <a href="shop.html" class="w3-bar-item w3-button">商品購入</a>
-        <a href="recruit.html" class="w3-bar-item w3-button">採用情報</a>
-        <a href="index.html#contact" class="w3-bar-item w3-button">お問い合わせ</a>
-    </div>
   </div>
-</div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px; padding:0; background:none;" id="home">
@@ -225,7 +241,6 @@ svg text {
   <div id="ibuki" class="w3-row commitment-section w3-padding-64">
     <div class="w3-col m6 w3-padding-large">
       <h2 class="w3-center"><span class="commitment-number">2</span>息吹農法</h2>
-      <h5 class="w3-center w3-text-grey">Ibuki Farming Method</h5>
       <p class="w3-large">第二のこだわりは息吹農法です。</p>
       <p>この農法は水を改善し、土の団粒構造を促進させます。</p>
       <p>この団粒構造は、土に空気や水、栄養を適度に保たせる力を与えます。そうすることで微生物や菌が活性化します。また、稲の根張りを向上させる効果もあります。</p>
@@ -245,7 +260,6 @@ svg text {
     </div>
     <div class="w3-col m6 w3-padding-large">
       <h2 class="w3-center"><span class="commitment-number">3</span>疎植（そしょく）</h2>
-      <h5 class="w3-center w3-text-grey">Sparse Planting</h5>
       <p class="w3-large">第三のこだわりは疎植です。</p>
       <p>疎植とは、従来の植え方よりも株の間を広く取り、苗を田んぼに植えることです。</p>
       <p>疎植をすることで、採光性と通気性が改善されます。光が当たりやすくなることで、稲の根や葉がより伸び伸びと育ちます。通気性の改善は、湿気を防ぎ病気の蔓延を防ぎます。</p>
@@ -257,7 +271,6 @@ svg text {
   <div id="fertilizer" class="w3-row commitment-section w3-padding-64">
     <div class="w3-col m6 w3-padding-large">
       <h2 class="w3-center"><span class="commitment-number">4</span>肥料</h2>
-      <h5 class="w3-center w3-text-grey">Fertilizer</h5>
       <p class="w3-large">第四のこだわりは肥料です。</p>
       <p>肥料は主に、ミネラル肥料と有機肥料の二つを利用しました。</p>
       <p><b>ミネラル肥料：</b> 日本人に不足しがちな亜鉛やマグネシウムを多く含んだものになります。また、米粒が生育するタイミングでミネラル肥料を入れて、米粒に多くの栄養が行き渡るように調整しております。</p>
